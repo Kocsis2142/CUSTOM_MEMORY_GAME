@@ -7,9 +7,3 @@ Javascript, React.js, CSS
 ## frontend
 npm install
 npm start
-
-## backend
-npm install
-node start.js
-
-
