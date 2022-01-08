@@ -30,8 +30,6 @@ function App() {
   const [warnMsg, setWarnMsg] = useState("")
   const [warnClass, setWarnClass] = useState("")
 
-  console.log(gameTime)
-
     const gameLogic = () => {
         let turnedCards = gameTableArray.filter(gameCard => gameCard.cardTurned === true)
         setTurnedCardDeck(turnedCards)

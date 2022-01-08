@@ -7,12 +7,22 @@
     src: url(./fonts/PermanentMarker-Regular.ttf);
   }
 
+@keyframes translateY {
+    0% {
+      opacity: 0;
+      transform: translateY(-180px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 input[type='file'] {
     display: none;
 }
 
 body > #root > div {
-    height: 100vh;
+    height: 100%;
   }
 
 body {
@@ -86,6 +96,7 @@ body {
 }
 
 .prevTable {
+    animation: translateY .8s linear;
     margin: 2px;
     height: 200px;
     width: 200px;
@@ -150,7 +161,6 @@ body {
     background-color: #bdc3c250;
     padding: 5px 15px 5px 15px;
     border-radius: 14px;
-    
 }
 
 .timerMin, .timerSec {
@@ -179,7 +189,7 @@ body {
 }
 
 .winnerMsg, .loserMsg {
-    margin-top: -40px;
+    top: 0;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -187,7 +197,7 @@ body {
     justify-content: center;
     background-color: #272727e1;
     z-index: 10;
-    position: absolute;
+    position: fixed;
 }
 
 .winnerMsg > *, .loserMsg > * {
@@ -239,3 +249,62 @@ body {
     100% {top: -50px;}
   }
 
+  @media screen and (max-width: 900px) {
+    .prevTable {
+        height: 100px;
+        width: 100px;
+    }
+    .gameTable > div > img, .prevTable > div > img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+    .removeBtn {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .gameTable > div {
+        height: 100px;
+        width: 100px;
+    }
+    .btnMenu {
+        height: 100px;
+        width: 260px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+    .btnMenu > label > img, .btnMenu > img {
+        margin: 10px;
+        width: 70px;
+    }
+    .btnMenu > select {
+        width: 100px;
+        font-size: 14px;
+    }
+    .App {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .timerContainer {
+        width: 140px;
+     }
+    
+    .timer {
+        text-align: center;
+        font-weight: 500;
+        font-size: 40px;
+        color: #b92b27;
+        background-color: #bdc3c250;
+        padding: 5px 15px 5px 15px;
+        border-radius: 14px;
+    }
+  }
